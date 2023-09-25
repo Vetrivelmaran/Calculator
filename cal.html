@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        
+        
+        .container{
+            border: 2px solid red;
+
+            width: 363px;
+            height: 354px;
+                line-height: 32px;
+                background-color: black;
+                margin-top: 50px;
+                
+
+        }
+        .row{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1px;
+        
+        }
+        .col{
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .col input{
+            font-size: 2em;
+        }
+    input[type='button']:hover{
+        background-color: aquamarine;
+
+
+    } 
+      input[type='text']{
+        margin-top: 10px;
+        width:250px;
+        height:40px;
+        font-size: 2em;
+ }
+        
+
+
+    
+        
+    </style>
+</head>
+<body>
+
+<center><div class="container">
+    <div class="row search" ><input type="text" value="" id="result"></div>   <!--display-->
+
+    <div class="row">
+        <div class="col col-1"><input type="button" value="7" onclick="result.value+='7'"></div>
+        <div class="col"><input type="button" value="8" onclick="result.value+='8'"></div>
+        <div class="col"><input type="button" value="9" onclick="result.value+='9'"></div>
+        <div class="col"><input type="button" value="<" onclick="del()"></div>
+    </div><div class="row">
+        <div class="col"><input type="button" value="4" onclick="result.value+='4'"></div>
+        <div class="col"><input type="button" value="5" onclick="result.value+='5'"></div>
+        <div class="col"><input type="button" value="6" onclick="result.value+='6'"></div>
+        <div class="col"><input type="button" value="+" onclick="result.value+='+'"></div>
+    </div><div class="row">
+        <div class="col"><input type="button" value="1" onclick="result.value+='1'"></div>
+        <div class="col"><input type="button" value="2" onclick="result.value+='2'"></div>
+        <div class="col"><input type="button" value="3" onclick="result.value+='3'"></div>
+        <div class="col"><input type="button" value="-" onclick="result.value+='-'"></div>
+    </div><div class="row">
+        <div class="col"><input type="button" value="." onclick="result.value+='.'"></div>
+        <div class="col"><input type="button" value="0" onclick="result.value+='0'"></div>
+        <div class="col"><input type="button" value="/" onclick="result.value+='/'"></div>
+        <div class="col"><input type="button" value="x" onclick="result.value+='*'"></div>
+    </div><div class="row">
+        <div class="col"><input type="button" value="reset" onclick="result.value=''"></div>
+        <div class="col"><input type="button" value="=" onclick="solve()" ></div>
+        
+    </div>
+</div></center>
+<script>
+    document.getElementById('result').value=''
+    function del(){
+        let old =result.value;
+        document.getElementById('result').value =old.slice(0,old.length-1) 
+    }
+    function solve(){
+        let x=result.value;
+        let y =eval(x)
+        result.value=y;
+    }
+</script>
+</body>
+</html>
