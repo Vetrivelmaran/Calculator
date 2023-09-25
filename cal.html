@@ -14,7 +14,7 @@
             width: 363px;
             height: 354px;
                 line-height: 32px;
-                background-color: black;
+                background-color:#111;
                 margin-top: 50px;
                 
 
@@ -23,31 +23,40 @@
             display: flex;
             justify-content: space-around;
             margin-top: 1px;
-        
         }
         .col{
-            border-radius: 5px;
+            border-radius: 10px;
             margin-top: 15px;
         }
         .col input{
             font-size: 2em;
         }
     input[type='button']:hover{
-        background-color: aquamarine;
-
-
+        background-color: rgb(191, 238, 243);
+        text-align: center;
+        
     } 
+    input[type='button']{
+        border-radius: 31px;
+    }
       input[type='text']{
         margin-top: 10px;
         width:250px;
         height:40px;
         font-size: 2em;
+        background-color: rgb(143, 242, 143);
+        color: #111;
  }
-        
+ input{
+    height: 40pxpx;
+    width: 50px;
 
-
-    
-        
+ }
+ .res-cls{
+    height: 40pxpx;
+    width: 100px;
+    justify-content: start;
+ }
     </style>
 </head>
 <body>
@@ -76,7 +85,10 @@
         <div class="col"><input type="button" value="/" onclick="result.value+='/'"></div>
         <div class="col"><input type="button" value="x" onclick="result.value+='*'"></div>
     </div><div class="row">
-        <div class="col"><input type="button" value="reset" onclick="result.value=''"></div>
+        <div class="col"><input class="res-cls" type="button" value="reset" onclick="result.value=''"></div>
+        <!-- <i class="fa-solid fa-clock-rotate-left"></i> -->
+        <!-- <div class="his"><i class="fa-solid fa-clock-rotate-left"></button></div> -->
+            
         <div class="col"><input type="button" value="=" onclick="solve()" ></div>
         
     </div>
@@ -86,7 +98,7 @@
     function del(){
         let old =result.value;
         document.getElementById('result').value =old.slice(0,old.length-1) 
-    }
+    } 
     function solve(){
         let x=result.value;
         let y =eval(x)
